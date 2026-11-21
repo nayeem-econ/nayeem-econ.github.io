@@ -29,7 +29,7 @@ window.SITE = {
     photo: "assets/img/profile.jpg",
     cv: "assets/cv/Nayeem_Pramanik_CV.pdf",
     bio: [
-      "I am an applied economist working on aquaculture technology adoption, household welfare and the environment in Bangladesh. I am a PhD Fellow in the Department of Agricultural Economics at Bangladesh Agricultural University (BAU) and a Research Assistant on the MIXTAPE (Monitoring Impacts for Technology Adoption and Program Engagement in Bangladesh) project, funded by CGIAR's SPIA (Standing Panel on Impact Assessment) and jointly led by Cornell University and BAU. The project studies how farmers adopt CGIAR innovations in rice and aquaculture, and my work on it draws on Bangladesh Integrated Household Survey (BIHS) panel data.",
+      "I am an applied economist working on aquaculture technology adoption, household welfare and the environment in Bangladesh. I am a PhD Fellow in the Department of Agricultural Economics at Bangladesh Agricultural University (BAU) and a Research Assistant on the <b>MIXTAPE</b> (Monitoring Impacts for Technology Adoption and Program Engagement in Bangladesh) project, funded by CGIAR's <b>SPIA</b> (Standing Panel on Impact Assessment) and jointly led by Cornell University and BAU. The project studies how farmers adopt CGIAR innovations in rice and aquaculture, and my work on it draws on Bangladesh Integrated Household Survey (BIHS) panel data.",
       "My expertise lies in applied time-series and panel-data econometrics, combined with primary household surveys and field-based project work. I completed my BSS (Honours) and MSS in Economics at Pabna University of Science and Technology, securing first position in both. Beyond research, I enjoy writing for my economics blog, travelling and exploring the world."
     ]
   },
@@ -52,7 +52,7 @@ window.SITE = {
     "Time series and panel-data econometrics",
     "Environmental economics",
     "Health Economics",
-    "Macroeconomics",
+    "Macroeconomics"
   ],
 
   /* NEWS — add the newest line at the top */
@@ -251,16 +251,11 @@ window.SITE = {
   /* FIELDWORK — add photos later as: photos: ["assets/img/field/pabna-1.jpg", "..."] */
   fieldwork: [
     {
-      title: "MIXTAPE household survey",
-      place: "Melandaha Upazila, Jamalpur",
-      details: "Field data collection on the adoption of CGIAR rice and aquaculture innovations for the MIXTAPE project.",
-      photos: []
-    },
-    {
       title: "Riverbank erosion and farm losses survey",
-      place: "Padma and Jamuna riverbanks, Pabna District",
-      details: "Supervised a five-day survey of 300 rice and banana farming households to quantify erosion-related production losses and study farmers' risk behaviour and perceptions.",
-      photos: []
+      place: "Padma and Jamuna riverbanks, Pabna",
+      details: "Led the field data collection for an MPhil research project on riverbank erosion along the Padma and Jamuna rivers in Pabna, surveying 300 rice and banana farming households on erosion-related production losses and farmers' risk behaviour and perceptions (August 2025).",
+      photos: [],
+      gallery: false
     }
   ],
 
@@ -324,8 +319,31 @@ window.SITE = {
   /* GALLERY — add photos here after uploading them to assets/img/gallery/
      category: "Fieldwork", "Conference", "Award" or anything you like */
   gallery: [
-    /* { src: "assets/img/gallery/jamalpur-1.jpg", title: "MIXTAPE survey", caption: "Household interview in Melandaha, Jamalpur", category: "Fieldwork" }, */
-    { src: "assets/img/gallery/pust-conference-2025.jpg", title: "1st National Conference, PUST", caption: "Presenting research at the 1st National Conference, Faculty of Humanities and Social Science, Pabna University of Science and Technology (28 June 2025)", category: "Conference" }
+    /* Newest first. Upload the photo to assets/img/gallery/ first, then add a line at the top. Example:
+    { src: "assets/img/gallery/new-photo.jpg", title: "Short title", caption: "One-line description (date)", category: "Fieldwork", place: "Place" }, */
+    { src: "assets/img/gallery/melandaha-jamalpur-field-visit-2026.jpg", title: "Field visit in Melandaha, Jamalpur", caption: "MIXTAPE team field visit in Melandaha Upazila, Jamalpur with Yeyoung Lee, Postdoctoral Researcher, Cornell University (16 November 2026)", category: "Fieldwork", place: "Melandaha, Jamalpur" },
+    { src: "assets/img/gallery/nikli-kishoreganj-field-survey-2026.jpg", title: "Field survey in Nikli, Kishoreganj", caption: "MIXTAPE team field survey in Nikli, Kishoreganj (haor region) with Yeyoung Lee, Postdoctoral Researcher, Cornell University (12 November 2026)", category: "Fieldwork", place: "Nikli, Kishoreganj" },
+    { src: "assets/img/gallery/mymensingh-field-visit-yeyoung-lee-2026.jpg", title: "Field visit with Yeyoung Lee", caption: "MIXTAPE team field visit in Mymensingh with Yeyoung Lee, Postdoctoral Researcher, Cornell University (11 November 2026)", category: "Fieldwork", place: "Mymensingh" },
+    { src: "assets/img/gallery/manikganj-pretest-2026.jpg", title: "Field pre-test of the household survey", caption: "Taking part in the field pre-test of the household survey questionnaire, interviewing a farmer in Manikganj (19 October 2026)", category: "Fieldwork", place: "Manikganj" },
+    { src: "assets/img/gallery/phd-first-seminar-2026.jpg", title: "PhD first seminar (proposal defence)", caption: "Presenting my PhD proposal, Innovation–Wellbeing Nexus: Adoption Dynamics, Productivity, Efficiency and Household Welfare in the Aquaculture Sector of Bangladesh, at the first PhD seminar, Department of Agricultural Economics, Bangladesh Agricultural University (6 October 2026)", category: "PhD Seminar", place: "BAU, Mymensingh" },
+    { src: "assets/img/gallery/phd-first-seminar-2026-committee.jpg", title: "With my PhD supervisory committee", caption: "With members of my PhD supervisory committee after the first PhD seminar, Faculty of Agricultural Economics and Rural Sociology, Bangladesh Agricultural University (6 October 2026)", category: "PhD Seminar", place: "BAU, Mymensingh" },
+    { src: "assets/img/gallery/phd-first-seminar-2026-audience.jpg", title: "Seminar audience", caption: "Faculty members and students attending my first PhD seminar, Faculty of Agricultural Economics and Rural Sociology, Bangladesh Agricultural University (6 October 2026)", category: "PhD Seminar", place: "BAU, Mymensingh" },
+    { src: "assets/img/gallery/mixtape-enumerator-training-2026-group.jpg", title: "Enumerator training for the MIXTAPE national survey", caption: "With the DATA survey team and enumerators on the first day of enumerator training for the MIXTAPE national household survey (21 September 2026)", category: "MIXTAPE Project", place: "Bangladesh" },
+    { src: "assets/img/gallery/mixtape-enumerator-training-2026-session.jpg", title: "Training session for survey enumerators", caption: "A training session for enumerators of the MIXTAPE national household survey, conducted with the DATA survey team; the training runs for about one to one and a half months (September 2026)", category: "MIXTAPE Project", place: "Bangladesh" },
+    { src: "assets/img/gallery/mixtape-enumerator-training-2026-hall.jpg", title: "Enumerators at the survey training", caption: "Enumerators attending the first day of training for the MIXTAPE national household survey, observed by MIXTAPE project members (21 September 2026)", category: "MIXTAPE Project", place: "Bangladesh" },
+    { src: "assets/img/gallery/bsert-certificate-2026.jpg", title: "Receiving the BSERT training certificate", caption: "Receiving the certificate for the training on Quantitative and Qualitative Data Analysis in MS Excel and STATA, Bureau of Socioeconomic Research and Training (BSERT), Faculty of Agricultural Economics and Rural Sociology, Bangladesh Agricultural University (June 2026)", category: "Certificates & Awards", place: "BAU, Mymensingh" },
+    { src: "assets/img/gallery/reliance-aqua-farms-2026.jpg", title: "Fish breeding complex visit with Kurt Waldman", caption: "MIXTAPE team field visit with Kurt Waldman (Cornell University) to Reliance Aqua Farms, a fish breeding complex supported by BFRI, Trishal, Mymensingh (June 2026)", category: "Fieldwork", place: "Trishal, Mymensingh" },
+    { src: "assets/img/gallery/hatchery-visit-2026.jpg", title: "Hatchery visit with Kurt Waldman", caption: "MIXTAPE team field visit to fish hatcheries with Kurt Waldman (Cornell University) during his visit to Bangladesh (9 June 2026)", category: "Fieldwork", place: "Mymensingh" },
+    { src: "assets/img/gallery/bfri-kuchia-visit-2026.jpg", title: "Visit to BFRI fish breeding research unit", caption: "Visiting the Kuchia (mud eel) breeding and culture research unit, Bangladesh Fisheries Research Institute (BFRI) Freshwater Station, Mymensingh (9 June 2026)", category: "Fieldwork", place: "BFRI, Mymensingh" },
+    { src: "assets/img/gallery/barc-trade-training-2026.jpg", title: "Training on Trade Dynamics in Global Agricultural Markets", caption: "Training on Trade Dynamics and Strategic Interventions in Global Agricultural Markets, Agricultural Economics and Rural Sociology Division, Bangladesh Agricultural Research Council (BARC), Dhaka (April 2026)", category: "Training", place: "BARC, Dhaka" },
+    { src: "assets/img/gallery/mixtape-field-visit-2026.jpg", title: "MIXTAPE field visit with Andrew Bell", caption: "Field visit with Andrew Bell (Co-PI, MIXTAPE project, Cornell University), the project team and local farmers in Bangladesh (2 April 2026)", category: "Fieldwork", place: "Bangladesh" },
+    { src: "assets/img/gallery/mixtape-inception-2025.jpg", title: "MIXTAPE Inception cum Expert Consultation Workshop", caption: "Speaking at the Inception cum Expert Consultation Workshop of the MIXTAPE (Monitoring Impacts for Technology Adoption and Program Engagement) project, Bangladesh Agricultural Research Council (BARC), Dhaka (October 2025)", category: "MIXTAPE Project", place: "BARC, Dhaka" },
+    { src: "assets/img/gallery/mixtape-inception-2025-group.jpg", title: "With the MIXTAPE project team", caption: "With the MIXTAPE project team at the Inception cum Expert Consultation Workshop, BARC, Dhaka (October 2025)", category: "MIXTAPE Project", place: "BARC, Dhaka" },
+    { src: "assets/img/gallery/pabna-riverbank-erosion-survey-2025.jpg", title: "Riverbank erosion and farm losses survey", caption: "Led the field data collection for an MPhil research project on riverbank erosion along the Padma and Jamuna rivers in Pabna, surveying 300 rice and banana farming households (August 2025)", category: "Fieldwork", place: "Padma and Jamuna riverbanks, Pabna" },
+    { src: "assets/img/gallery/pust-conference-2025.jpg", title: "Presenting at the 1st National Conference 2025", caption: "Presenting my research at the 1st National Conference 2025, Faculty of Humanities and Social Science, Pabna University of Science and Technology (28 June 2025)", category: "Conference", place: "PUST, Pabna" },
+    { src: "assets/img/gallery/pust-conference-2025-group.jpg", title: "With fellow presenters and session chairs", caption: "With fellow presenters and session chairs at the 1st National Conference 2025, Pabna University of Science and Technology (28 June 2025)", category: "Conference", place: "PUST, Pabna" },
+    { src: "assets/img/gallery/pust-farewell-award-2024-receiving.jpg", title: "Award for first position in BSS and MSS", caption: "Receiving an award from the Chairman, Department of Economics, Pabna University of Science and Technology, for securing first position in both the BSS (Honours) and MSS in Economics, at the department's Farewell 2024 ceremony", category: "Certificates & Awards", place: "PUST, Pabna" },
+    { src: "assets/img/gallery/pust-farewell-award-2024.jpg", title: "Farewell 2024, Department of Economics, PUST", caption: "With the first-position award and graduate crest at the Farewell 2024 ceremony, Department of Economics, Pabna University of Science and Technology", category: "Certificates & Awards", place: "PUST, Pabna" }
   ],
 
   /* REFERENCES — contact details are left out on purpose; add an email only with the person's permission */

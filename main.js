@@ -167,7 +167,7 @@
   };
   const slides = [];
   (S.gallery || []).forEach(g => slides.push({ src: g.src, title: g.title, text: g.caption || "", cat: g.category || "Photo", place: g.place || "" }));
-  (S.fieldwork || []).forEach((f, i) => {
+  (S.fieldwork || []).filter(f => f.gallery !== false).forEach((f, i) => {
     if ((f.photos || []).length) f.photos.forEach(src => slides.push({ src, title: f.title, text: f.details, cat: "Fieldwork", place: f.place }));
     else slides.push({ art: plots(11 + i * 37), title: f.title, text: f.details, cat: "Fieldwork", place: f.place });
   });
