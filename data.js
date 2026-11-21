@@ -21,6 +21,9 @@ window.SITE = {
     location: "Bangladesh Agricultural University, Mymensingh, Bangladesh",
     email: "nayeem.econ@gmail.com",
     /* footer copyright line: "© year Nayeem Hasan. All rights reserved." with the name linked */
+    /* contact form: messages are delivered to this email through FormSubmit (free, no account).
+       The first message triggers an activation email from FormSubmit — click "Activate" once. */
+    formEndpoint: "https://formsubmit.co/ajax/nayeem.econ@gmail.com",
     copyrightName: "Nayeem Hasan",
     copyrightLink: "https://www.facebook.com/f.nhrahat",
     photo: "assets/img/profile.jpg",

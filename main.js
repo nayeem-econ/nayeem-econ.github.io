@@ -242,14 +242,35 @@
   if (S.blog && S.blog.url) $("blog").innerHTML = `<h3>${S.blog.name}</h3><p>${S.blog.text}</p><a href="${S.blog.url}" target="_blank" rel="noopener">${S.blog.url.replace(/^https?:\/\//, "")} ↗</a>`;
   else $("blog").remove();
 
-  /* ---------- contact form: opens the visitor's email app ---------- */
-  $("c-form").addEventListener("submit", e => {
+  /* ---------- contact form: sends through FormSubmit, falls back to the email app ---------- */
+  const form = $("c-form"), note = $("c-note"), sendBtn = form.querySelector(".send");
+  const setNote = (t, cls) => { note.textContent = t; note.className = "form-note" + (cls ? " " + cls : ""); };
+  form.addEventListener("submit", async e => {
     e.preventDefault();
-    const n = $("c-name").value.trim(), m = $("c-email").value.trim(), t = $("c-msg").value.trim(), note = $("c-note");
-    if (!n || !t || !/^\S+@\S+\.\S+$/.test(m)) { note.textContent = "Please fill in your name, a valid email and a message."; note.classList.add("err"); return; }
-    note.classList.remove("err");
-    note.textContent = "Opening your email app… If nothing opens, write to " + P.email;
-    location.href = `mailto:${P.email}?subject=${encodeURIComponent("Message from " + n)}&body=${encodeURIComponent(t + "\n\n— " + n + " (" + m + ")")}`;
+    const n = $("c-name").value.trim(), m = $("c-email").value.trim(), t = $("c-msg").value.trim();
+    if (!n || !t || !/^\S+@\S+\.\S+$/.test(m)) { setNote("Please fill in your name, a valid email and a message.", "err"); return; }
+    if ($("c-hp").value) return;
+    if (!P.formEndpoint) {
+      setNote("Opening your email app… If nothing opens, write to " + P.email);
+      location.href = `mailto:${P.email}?subject=${encodeURIComponent("Message from " + n)}&body=${encodeURIComponent(t + "\n\n— " + n + " (" + m + ")")}`;
+      return;
+    }
+    sendBtn.disabled = true; sendBtn.textContent = "Sending…"; setNote("");
+    try {
+      const r = await fetch(P.formEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({ name: n, email: m, message: t, _replyto: m, _subject: "Portfolio message from " + n, _template: "table" })
+      });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok || String(d.success) === "false") throw new Error(d.message || "send failed");
+      form.reset();
+      setNote("Thank you! Your message has been sent. I will get back to you soon.", "ok");
+    } catch (err) {
+      setNote("Sorry, the message could not be sent right now. Please email me directly at " + P.email + ".", "err");
+    } finally {
+      sendBtn.disabled = false; sendBtn.textContent = "Send message";
+    }
   });
 
   /* ---------- theme toggle ---------- */
