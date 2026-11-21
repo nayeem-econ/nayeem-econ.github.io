@@ -29,8 +29,8 @@ window.SITE = {
     photo: "assets/img/profile.jpg",
     cv: "assets/cv/Nayeem_Pramanik_CV.pdf",
     bio: [
-      "I am an applied economist working on agricultural technology adoption, household welfare and the environment in Bangladesh. I am a PhD researcher in the Department of Agricultural Economics at Bangladesh Agricultural University and a Research Assistant on the SPIA-funded MIXTAPE project, jointly led by Cornell University and Bangladesh Agricultural University, which studies how farmers adopt CGIAR innovations in rice and aquaculture.",
-      "My research combines primary household surveys with econometric methods to measure how technologies, environmental pressures and household behaviour shape incomes, health spending, poverty and wellbeing. I earned my BSS (Honours) and MSS in Economics from Pabna University of Science and Technology, securing first position in both."
+      "I am an applied economist working on aquaculture technology adoption, household welfare and the environment in Bangladesh. I am a PhD Fellow in the Department of Agricultural Economics at Bangladesh Agricultural University (BAU) and a Research Assistant on the MIXTAPE (Monitoring Impacts for Technology Adoption and Program Engagement in Bangladesh) project, funded by CGIAR's SPIA (Standing Panel on Impact Assessment) and jointly led by Cornell University and BAU. The project studies how farmers adopt CGIAR innovations in rice and aquaculture, and my work on it draws on Bangladesh Integrated Household Survey (BIHS) panel data.",
+      "My expertise lies in applied time-series and panel-data econometrics, combined with primary household surveys and field-based project work. I completed my BSS (Honours) and MSS in Economics at Pabna University of Science and Technology, securing first position in both. Beyond research, I enjoy writing for my economics blog, travelling and exploring the world."
     ]
   },
 
@@ -47,12 +47,12 @@ window.SITE = {
   ],
 
   interests: [
-    "Agricultural economics",
+    "Agricultural Economics",
     "Technology adoption and impact evaluation",
+    "Time series and panel-data econometrics",
     "Environmental economics",
-    "Household welfare, poverty and health",
-    "Applied and panel-data econometrics",
-    "Macroeconomics"
+    "Health Economics",
+    "Macroeconomics",
   ],
 
   /* NEWS — add the newest line at the top */
@@ -108,7 +108,7 @@ window.SITE = {
       org: "MIXTAPE project (Monitoring Impacts for Technology Adoption and Program Engagement in Bangladesh)",
       period: "Sep 2025 – present",
       link: { label: "MIXTAPE project", url: "https://www.elm-lab.org/mixtape" },
-      details: "SPIA-funded project jointly led by Cornell University and Bangladesh Agricultural University on the adoption dynamics of CGIAR innovations in rice and aquaculture. I support household data collection in the field, including survey work in Melandaha Upazila, Jamalpur."
+      details: "SPIA-funded project jointly led by Cornell University and Bangladesh Agricultural University, examining the adoption dynamics of CGIAR innovations in rice and aquaculture. In this role, I contribute to project activities while using the project's panel data for my PhD research and preparing research articles for high-impact, peer-reviewed journals."
     },
     {
       role: "Research Associate",
