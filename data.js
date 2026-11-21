@@ -274,7 +274,7 @@ window.SITE = {
   /* TRAINING — cert: path to the certificate image (shows a "View certificate" button) */
   training: [
     { date: "Nov 2024 – Jan 2025", title: "Microsoft Word & Excel (60 hours)", org: "Department of CSE, PUST · EDGE Project, Bangladesh Computer Council", type: "Training", text: "60-hour training conducted by the CSE Department, PUST, under the Enhancing Digital Government and Economy (EDGE) project, ICT Division.", cert: "assets/img/certificates/edge-word-excel-2025.jpg" },
-    { date: "Jul – Dec 2023", title: "Diploma in Software Application Course", org: "Postal Academy, Rajshahi", type: "Diploma", text: "Six-month diploma course, July–December 2023." },
+    { date: "Jul – Dec 2023", title: "Diploma in Software Application Course", org: "Postal Academy, Rajshahi", type: "Diploma", text: "Six-month diploma course, July–December 2023.", cert: "assets/img/certificates/postal-academy-diploma-2023.jpg" },
     { date: "Apr 2022", title: "R Essentials (R programming)", org: "Statistical Research Consultants Bangladesh (SRCBD)", type: "Training", text: "12-hour training on R programming (2, 8 and 9 April 2022).", cert: "assets/img/certificates/srcbd-r-essentials-2022.jpg" },
     { date: "May 2021", title: "Enjoy Publishing Your Research with Ease", org: "Statistical Research Consultants Bangladesh (SRCBD)", type: "Workshop", text: "Day-long workshop on preparing and publishing research articles.", cert: "assets/img/certificates/srcbd-publishing-workshop-2021.jpg" },
     { date: "Apr – Jun 2021", title: "SPSS & Data Analysis", org: "Dhaka University Research Society (DURS)", type: "Training", text: "Training on SPSS and data analysis, 20 April – 11 June 2021.", cert: "assets/img/certificates/durs-spss-2021.jpg" },
