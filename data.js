@@ -16,10 +16,13 @@ window.SITE = {
     name: "Md. Nayeem Hasan Pramanik",
     title: "PhD Researcher in Agricultural Economics",
     role: "Research Assistant, SPIA-funded MIXTAPE Project",
-    badges: ["PhD Researcher", "BSS & MSS, 1st position"],
+    badges: ["PhD Researcher", "Applied Economist"],
     affiliation: "Department of Agricultural Economics, Bangladesh Agricultural University",
-    location: "Mymensingh, Bangladesh",
+    location: "Bangladesh Agricultural University, Mymensingh, Bangladesh",
     email: "nayeem.econ@gmail.com",
+    /* footer copyright line: "© year Nayeem Hasan. All rights reserved." with the name linked */
+    copyrightName: "Nayeem Hasan",
+    copyrightLink: "https://www.facebook.com/f.nhrahat",
     photo: "assets/img/profile.jpg",
     cv: "assets/cv/Nayeem_Pramanik_CV.pdf",
     bio: [
@@ -28,12 +31,16 @@ window.SITE = {
     ]
   },
 
+  /* PROFILE LINKS — shown on the left card and in the footer.
+     A button appears only when url is filled in. footer: false keeps it off the footer. */
   links: [
     { label: "Google Scholar", url: "https://scholar.google.com/citations?user=mv0qyiMAAAAJ&hl=en" },
-    { label: "ORCID",          url: "https://orcid.org/0000-0001-8731-4042" },
     { label: "ResearchGate",   url: "https://www.researchgate.net/profile/Md-Nayeem-Hasan-Pramanik" },
+    { label: "ORCID",          url: "https://orcid.org/0000-0001-8731-4042" },
+    { label: "Scopus",         url: "https://www.scopus.com/authid/detail.uri?authorId=57989605000" },
+    { label: "Web of Science", url: "https://www.webofscience.com/wos/author/record/QTU-4509-2026" },
     { label: "LinkedIn",       url: "https://www.linkedin.com/in/nhrahat/" },
-    { label: "GitHub",         url: "https://github.com/nayeem-econ" }
+    { label: "GitHub",         url: "https://github.com/nayeem-econ", footer: false }
   ],
 
   interests: [
@@ -47,7 +54,7 @@ window.SITE = {
 
   /* NEWS — add the newest line at the top */
   news: [
-    { date: "Oct 2026", text: "Paper on maize income and rural poverty accepted in <em>Discover Sustainability</em>." },
+    { date: "Nov 2026", text: "Paper on maize income and rural poverty published in <em>Discover Sustainability</em>." },
     { date: "Sep 2026", text: "Paper on financial vulnerability, diet and student mental health published in <em>Scientific Reports</em>." },
     { date: "Jun 2026", text: "Paper on the hidden healthcare costs of brickfields published in the <em>Journal of Humanities and Social Science, PUST</em>." },
     { date: "Sep 2025", text: "Joined the SPIA-funded MIXTAPE project (Cornell University and Bangladesh Agricultural University) as a Research Assistant." },
@@ -94,21 +101,41 @@ window.SITE = {
   experience: [
     {
       role: "Research Assistant",
+      tag: "Current appointment",
       org: "MIXTAPE project (Monitoring Impacts for Technology Adoption and Program Engagement in Bangladesh)",
       period: "Sep 2025 – present",
+      link: { label: "MIXTAPE project", url: "https://www.elm-lab.org/mixtape" },
       details: "SPIA-funded project jointly led by Cornell University and Bangladesh Agricultural University on the adoption dynamics of CGIAR innovations in rice and aquaculture. I support household data collection in the field, including survey work in Melandaha Upazila, Jamalpur."
     },
     {
       role: "Research Associate",
+      tag: "Research project",
       org: "Assessing Farmers' Climate Change Vulnerability and Adaptation Strategy in Bangladesh — Department of Economics, PUST",
       period: "FY 2024–25",
       details: "Funded by the Call for Research and Evaluation Committee, Pabna University of Science and Technology (UGC). Reviewed literature, prepared the interview schedule, and took part in data collection, data processing, analysis and report writing."
     },
     {
       role: "Research Associate",
+      tag: "Research project",
       org: "Analyzing Economic and Environmental Efficiency of Onion Production in Pabna District, Bangladesh: A Data Envelopment Analysis Approach — Department of Economics, PUST",
       period: "FY 2023–24",
       details: "Funded by the Call for Research and Evaluation Committee, Pabna University of Science and Technology (UGC). Same responsibilities across the project cycle, from questionnaire design to reporting."
+    },
+    {
+      role: "MSS Thesis",
+      tag: "Master's thesis",
+      org: "Economic Analysis of Brickfields Activities on Agricultural Production and Public Health: A Cross-Sectional Study of Pabna District in Bangladesh",
+      period: "2021 – 2022 · Department of Economics, PUST",
+      details: "Studied how brickfield activities affect nearby farms and households in Pabna District, combining household survey data on crop production, healthcare spending and socio-economic wellbeing. The work led to a conference paper on the value of farm losses (2025) and a journal article on the hidden healthcare costs of brickfields (2026).",
+      supervisor: "Redwan Ahmed, Associate Professor, Department of Economics, Pabna University of Science and Technology"
+    },
+    {
+      role: "BSS Project",
+      tag: "Undergraduate project",
+      org: "Exploring the Nexus between Environmental Degradation and Living Standard in Bangladesh: Evidence from ARDL and ECM Technique",
+      period: "2017 – 2021 · Department of Economics, PUST",
+      details: "Time-series analysis of Bangladesh for 1990–2021 using ARDL bounds testing and an error-correction model to examine how energy consumption and living standards relate to CO₂ emissions. The project was published in PLOS Climate (2025).",
+      supervisor: "Md. Nehal Hasnain, Assistant Professor, Department of Economics, Pabna University of Science and Technology"
     }
   ],
 
@@ -118,11 +145,12 @@ window.SITE = {
   publications: [
     {
       year: "2026",
-      status: "In press",
+      status: "Published",
       authors: "Ahmed, R., Tithi, R. H., Pramanik, M. N. H., Rana, M. S., & Fariha, J.",
       title: "Contribution of maize production to household income and poverty measures among smallholder farmers in Pabna Sadar Upazila, Bangladesh",
       journal: "Discover Sustainability",
-      details: "Accepted 30 October 2026",
+      date: "17 Nov",
+      details: "Published online 17 November 2026",
       badge: "Scopus Q1",
       doi: "10.1007/s43621-026-05237-8",
       pdf: "",
@@ -134,6 +162,7 @@ window.SITE = {
       authors: "Pramanik, M. N. H., Aktar, M. S., & Ahmed, R.",
       title: "Financial vulnerability and dietary diversity are associated with mental health and academic performance among Bangladeshi university students",
       journal: "Scientific Reports",
+      date: "15 Sep",
       details: "Published online 15 September 2026",
       badge: "Scopus Q1",
       doi: "10.1038/s41598-026-71891-7",
@@ -146,6 +175,7 @@ window.SITE = {
       authors: "Pramanik, M. N. H., & Ahmed, R.",
       title: "The hidden costs of brickfields: Healthcare expenditure and socio-economic dissatisfaction in rural Bangladesh",
       journal: "Journal of Humanities and Social Science, PUST",
+      date: "Jun",
       details: "2(2), 1–23. ISSN 2959-1503",
       badge: "",
       doi: "",
@@ -158,6 +188,7 @@ window.SITE = {
       authors: "Pramanik, M. N. H., Al-Amin, M., & Hasnain, M. N.",
       title: "Assessing the impact of household smoking habits on children's education spending: A case study of Pabna District in Bangladesh",
       journal: "Journal of Humanities and Social Science, PUST",
+      date: "Jun",
       details: "2(1), 129–148. ISSN 2959-1503",
       badge: "",
       doi: "",
@@ -170,6 +201,7 @@ window.SITE = {
       authors: "Pramanik, M. N. H., & Hasnain, M. N.",
       title: "Exploring the nexus between environmental degradation and living standard in Bangladesh: Evidence from ARDL and ECM technique",
       journal: "PLOS Climate",
+      date: "9 May",
       details: "4(5), e0000421",
       badge: "Scopus Q1",
       doi: "10.1371/journal.pclm.0000421",
@@ -182,6 +214,7 @@ window.SITE = {
       authors: "Alam, M., Al-Mamun, M., Pramanik, M. N. H., et al.",
       title: "Paradigm shifting of education system during COVID-19 pandemic: A qualitative study on education components",
       journal: "Heliyon",
+      date: "",
       details: "8, e11927",
       badge: "Scopus Q1",
       doi: "10.1016/j.heliyon.2022.e11927",
@@ -190,14 +223,23 @@ window.SITE = {
     }
   ],
 
+  /* UNDER REVIEW / ONGOING — add your submitted or ongoing manuscripts here.
+     status: "Under review", "Revise & resubmit", "Submitted" or "Ongoing". Example:
+     { title: "Paper title", authors: "Pramanik, M. N. H., & Islam, A. H. M. S.", journal: "Journal name", status: "Under review", year: "2026" },
+  */
+  manuscripts: [
+  ],
+
   conferences: [
     {
       title: "Valuing the Harm Brickfields Cause to Agricultural Production: Evidence from Pabna District, Bangladesh",
+      cert: "assets/img/certificates/conference-brickfields-2025.jpg",
       event: "1st National Conference “Towards a Sustainable Future: Economic Stability, Political Reforms and Socio-cultural Transformations in Bangladesh”, Faculty of Humanities and Social Science, Pabna University of Science and Technology",
       date: "28 June 2025"
     },
     {
       title: "Analyzing Environmental Efficiency of Onion Production in Pabna District of Bangladesh: A Data Envelopment Analysis Approach",
+      cert: "assets/img/certificates/conference-onion-dea-2025.jpg",
       event: "1st National Conference “Towards a Sustainable Future: Economic Stability, Political Reforms and Socio-cultural Transformations in Bangladesh”, Faculty of Humanities and Social Science, Pabna University of Science and Technology",
       date: "28 June 2025"
     }
@@ -226,14 +268,15 @@ window.SITE = {
     { title: "University Merit Scholarship, every year of the BSS programme", org: "Scholarship Section, Pabna University of Science and Technology (session 2017–18)", year: "" }
   ],
 
+  /* TRAINING — cert: path to the certificate image (shows a "View certificate" button) */
   training: [
-    { title: "Microsoft Word & Excel (60 hours), EDGE Project, Bangladesh Computer Council", org: "Department of CSE, Pabna University of Science and Technology", year: "2024–25" },
-    { title: "Diploma in Software Application Course", org: "Postal Academy, Rajshahi", year: "2023" },
-    { title: "R Essentials (R programming)", org: "Statistical Research Consultants Bangladesh (SRCBD)", year: "2022" },
-    { title: "Statistical Package for the Social Sciences (SPSS) & Data Analysis", org: "Dhaka University Research Society", year: "2021" },
-    { title: "Enjoy Publishing Your Research with Ease (workshop)", org: "Statistical Research Consultants Bangladesh (SRCBD)", year: "2021" },
-    { title: "Research Course: Basic to Advance (Zotero, Mendeley, SPSS, NVivo, KoBoToolbox, LaTeX)", org: "Research Help Bangladesh", year: "2021" },
-    { title: "Writing, Presenting, and Publishing Academic Papers (workshop)", org: "South Asian Network on Economic Modeling (SANEM)", year: "2019" }
+    { date: "Nov 2024 – Jan 2025", title: "Microsoft Word & Excel (60 hours)", org: "Department of CSE, PUST · EDGE Project, Bangladesh Computer Council", type: "Training", text: "60-hour training conducted by the CSE Department, PUST, under the Enhancing Digital Government and Economy (EDGE) project, ICT Division.", cert: "assets/img/certificates/edge-word-excel-2025.jpg" },
+    { date: "Jul – Dec 2023", title: "Diploma in Software Application Course", org: "Postal Academy, Rajshahi", type: "Diploma", text: "Six-month diploma course, July–December 2023." },
+    { date: "Apr 2022", title: "R Essentials (R programming)", org: "Statistical Research Consultants Bangladesh (SRCBD)", type: "Training", text: "12-hour training on R programming (2, 8 and 9 April 2022).", cert: "assets/img/certificates/srcbd-r-essentials-2022.jpg" },
+    { date: "May 2021", title: "Enjoy Publishing Your Research with Ease", org: "Statistical Research Consultants Bangladesh (SRCBD)", type: "Workshop", text: "Day-long workshop on preparing and publishing research articles.", cert: "assets/img/certificates/srcbd-publishing-workshop-2021.jpg" },
+    { date: "Apr – Jun 2021", title: "SPSS & Data Analysis", org: "Dhaka University Research Society (DURS)", type: "Training", text: "Training on SPSS and data analysis, 20 April – 11 June 2021.", cert: "assets/img/certificates/durs-spss-2021.jpg" },
+    { date: "Feb – Apr 2021", title: "Research Course: Basic to Advance", org: "Research Help Bangladesh", type: "Course", text: "30 lectures with research software: Zotero, Mendeley, SPSS, NVivo, KoBoToolbox and LaTeX.", cert: "assets/img/certificates/research-help-course-2021.jpg" },
+    { date: "Sep 2019", title: "Writing, Presenting, and Publishing Academic Papers", org: "South Asian Network on Economic Modeling (SANEM) · The World Bank", type: "Workshop", text: "Workshop on writing, presenting and publishing academic papers, held at SANEM, Dhaka.", cert: "assets/img/certificates/sanem-workshop-2019.jpg" }
   ],
 
   /* STATS — the numbers in the counter strip */
@@ -278,18 +321,25 @@ window.SITE = {
      category: "Fieldwork", "Conference", "Award" or anything you like */
   gallery: [
     /* { src: "assets/img/gallery/jamalpur-1.jpg", title: "MIXTAPE survey", caption: "Household interview in Melandaha, Jamalpur", category: "Fieldwork" }, */
+    { src: "assets/img/gallery/pust-conference-2025.jpg", title: "1st National Conference, PUST", caption: "Presenting research at the 1st National Conference, Faculty of Humanities and Social Science, Pabna University of Science and Technology (28 June 2025)", category: "Conference" }
   ],
 
   /* REFERENCES — contact details are left out on purpose; add an email only with the person's permission */
   references: [
-    { name: "Prof. Dr. A. H. M. Saiful Islam", title: "Professor, Department of Agricultural Economics", org: "Bangladesh Agricultural University, Mymensingh", relation: "PhD supervisor" },
-    { name: "Redwan Ahmed", title: "Associate Professor, Department of Economics", org: "Pabna University of Science and Technology", relation: "MSS thesis supervisor" },
-    { name: "Md. Nehal Hasnain", title: "Assistant Professor, Department of Economics", org: "Pabna University of Science and Technology", relation: "BSS project supervisor" }
+    { name: "Prof. Dr. A. H. M. Saiful Islam", title: "Professor, Department of Agricultural Economics", org: "Bangladesh Agricultural University, Mymensingh", email: "saifulislam.econ@bau.edu.bd", photo: "assets/img/references/saiful-islam.jpg", relation: "PhD supervisor" },
+    { name: "Redwan Ahmed", title: "Associate Professor, Department of Economics", org: "Pabna University of Science and Technology", email: "red1eco@yahoo.com", photo: "assets/img/references/redwan-ahmed.jpg", relation: "MSS thesis supervisor" },
+    { name: "Md. Nehal Hasnain", title: "Assistant Professor, Department of Economics", org: "Pabna University of Science and Technology", email: "nehalecon@pust.ac.bd", photo: "assets/img/references/nehal-hasnain.jpg", relation: "BSS project supervisor" }
   ],
 
+  /* EXTRA-CURRICULAR — grouped by organisation */
   leadership: [
-    { role: "Vice President, Economics Association", org: "Department of Economics, Pabna University of Science and Technology", period: "Nov 2024 – Jul 2025" },
-    { role: "Joint Secretary, Economics Association", org: "Department of Economics, Pabna University of Science and Technology", period: "Feb 2022 – Oct 2024" }
+    {
+      org: "Economics Association, Department of Economics, Pabna University of Science and Technology",
+      roles: [
+        { period: "Nov 2024 – Jul 2025", role: "Vice President", text: "Organised departmental programmes, meetings and events for the association." },
+        { period: "Feb 2022 – Oct 2024", role: "Joint Secretary", text: "Organised departmental programmes, meetings and events, working closely with fellow members." }
+      ]
+    }
   ],
 
   blog: {

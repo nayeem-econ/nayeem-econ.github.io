@@ -19,17 +19,18 @@
 
 <header class="topbar">
   <a class="brand" href="#about">
-    <img id="top-photo" alt="" width="36" height="36">
+    <img id="top-photo" alt="" width="38" height="38">
     <span><b id="top-name"></b><small id="top-title"></small></span>
   </a>
   <nav class="nav" id="nav" aria-label="Sections">
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
-    <a href="#expertise">Expertise</a>
+    <a href="#expertise">Skills</a>
     <a href="#publications">Publications</a>
     <a href="#updates">Updates</a>
-    <a href="#gallery">Fieldwork</a>
+    <a href="#certification">Certificates</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
   <button class="iconbtn" id="theme-btn" aria-label="Switch light or dark mode">
@@ -43,35 +44,27 @@
 
 <div class="layout">
   <aside class="profile" id="profile">
-    <div class="profile-in">
-      <div class="photo-wrap"><img id="p-photo" alt="Portrait of Md. Nayeem Hasan Pramanik" width="600" height="600"></div>
-      <div class="badges" id="p-badges"></div>
-      <h1 id="p-name"></h1>
-      <p class="p-role" id="p-role"></p>
-      <ul class="p-meta">
-        <li><svg viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5M5 9.5V20h14V9.5M9.5 20v-6h5v6"/></svg><span id="p-aff"></span></li>
-        <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="p-loc"></span></li>
-        <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 7 8.5-7"/></svg><a id="p-email" href="#"></a></li>
-      </ul>
-      <div class="p-links" id="p-links"></div>
-      <a class="cv-btn" id="cv-btn" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v3h16v-3"/></svg>Download CV
-      </a>
-    </div>
+    <div class="photo-wrap"><img id="p-photo" alt="Portrait of Md. Nayeem Hasan Pramanik" width="600" height="600"></div>
+    <div class="badges" id="p-badges"></div>
+    <h1 id="p-name"></h1>
+    <p class="p-role" id="p-role"></p>
+    <div class="honour" id="p-honour"></div>
+    <p class="p-line"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span id="p-loc"></span></p>
+    <p class="p-line"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 7 8.5-7"/></svg><a id="p-email" href="#"></a></p>
+    <div class="p-links" id="p-links"></div>
+    <a class="cv-btn" id="cv-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v3h16v-3"/></svg>Download CV
+    </a>
   </aside>
 
   <main class="content">
     <section class="card" id="about">
-      <p class="eyebrow">Welcome</p>
       <h2>Hi, I am Nayeem</h2>
       <div id="bio" class="prose"></div>
-      <div class="interests">
-        <h3 class="mini">Research interests</h3>
-        <ul id="interests" class="chips"></ul>
-      </div>
+      <ul id="interests" class="chips"></ul>
     </section>
 
-    <section class="card" id="education">
+    <section class="card tinted" id="education">
       <p class="eyebrow">Academic background</p>
       <h2>Academic credentials</h2>
       <ol class="tl" id="edu-list" data-limit="3"></ol>
@@ -79,67 +72,78 @@
 
     <section class="card" id="experience">
       <p class="eyebrow">Career trajectory</p>
-      <h2>Research experience</h2>
-      <ol class="tl" id="exp-list"></ol>
+      <h2>Research experience &amp; appointments</h2>
+      <div id="exp-list" class="exp"></div>
     </section>
 
-    <section class="stats card flat" id="stats" aria-label="At a glance"></section>
+    <section class="stats" id="stats" aria-label="At a glance"></section>
 
     <section class="card" id="expertise">
       <p class="eyebrow">Core expertise</p>
-      <h2>Methods and skills</h2>
+      <h2>Technical capabilities</h2>
       <div class="xgrid" id="x-grid"></div>
     </section>
 
     <section class="card" id="publications">
       <p class="eyebrow">Scholarly output</p>
-      <h2>Publications</h2>
-      <div class="tabs" role="tablist" id="pub-tabs"></div>
-      <ol class="pubs" id="pub-list"></ol>
+      <h2>Publications &amp; presentations</h2>
+      <div class="tabs" role="tablist" id="pub-tabs">
+        <button class="tab" role="tab" aria-selected="true" data-p="pub">Published<span id="n-pub"></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-p="rev">Under review &amp; ongoing<span id="n-rev"></span></button>
+      </div>
+      <ol class="pubs" id="pub-list" data-panel="pub"></ol>
+      <div id="rev-panel" data-panel="rev" hidden><ol class="pubs" id="rev-list"></ol><p class="empty" id="rev-empty">No manuscripts are listed here at the moment. Submitted and ongoing work will appear here.</p></div>
       <h3 class="mini sep">Conference presentations</h3>
       <ul class="talks" id="conf-list"></ul>
     </section>
 
     <section class="card" id="updates">
-      <p class="eyebrow">What's new</p>
+      <p class="eyebrow">Direction &amp; approach</p>
       <h2>Recent updates</h2>
       <div class="ticker" id="ticker"><ol class="news" id="news-list"></ol></div>
     </section>
 
-    <section class="card" id="gallery">
-      <p class="eyebrow">In the field</p>
-      <h2>Fieldwork and gallery</h2>
-      <div class="fgrid" id="field-list"></div>
-      <div class="tabs small" id="gal-tabs"></div>
-      <div class="gal" id="gal-grid"></div>
+    <section class="card" id="beyond">
+      <p class="eyebrow">Beyond research</p>
+      <h2>Extra-curricular activities</h2>
+      <div id="lead-list"></div>
     </section>
 
-    <section class="card" id="recognition">
+    <section class="card" id="certification">
       <p class="eyebrow">Recognition</p>
-      <h2>Awards, training and leadership</h2>
+      <h2>Awards, training &amp; certification</h2>
       <div class="agrid" id="award-list"></div>
-      <h3 class="mini sep">Training and certificates</h3>
-      <ol class="tl compact" id="train-list" data-limit="4"></ol>
-      <h3 class="mini sep">Leadership</h3>
-      <ol class="tl compact" id="lead-list"></ol>
+      <div class="cgrid" id="train-list" data-limit="4"></div>
+    </section>
+
+    <section class="card" id="gallery">
+      <p class="eyebrow">Academic gallery</p>
+      <h2>Fieldwork &amp; media gallery</h2>
+      <div class="tabs small" id="gal-tabs"></div>
+      <div class="carousel" id="carousel">
+        <div class="track" id="gal-track"></div>
+        <button class="iconbtn cbtn prev" id="c-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+        <button class="iconbtn cbtn next" id="c-next" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
     </section>
 
     <section class="card" id="references">
       <p class="eyebrow">Recommenders</p>
       <h2>Academic references</h2>
       <div class="rgrid" id="ref-list"></div>
-      <p class="note">Contact details are available on request.</p>
     </section>
 
     <section class="card contact" id="contact">
       <p class="eyebrow">Get in touch</p>
-      <h2>Contact</h2>
+      <h2>Contact me</h2>
       <div class="contact-grid">
         <form id="c-form" novalidate>
-          <label>Your name<input id="c-name" autocomplete="name" required></label>
-          <label>Your email<input id="c-email" type="email" autocomplete="email" required></label>
+          <div class="two-in">
+            <label>Your name<input id="c-name" autocomplete="name" required></label>
+            <label>Your email<input id="c-email" type="email" autocomplete="email" required></label>
+          </div>
           <label>Message<textarea id="c-msg" rows="5" required></textarea></label>
-          <button type="submit" class="send">Write email</button>
+          <button type="submit" class="send">Send message</button>
           <p class="form-note" id="c-note" role="status">This opens your email app with the message filled in.</p>
         </form>
         <div class="contact-side">
@@ -148,12 +152,24 @@
         </div>
       </div>
     </section>
-
-    <footer class="foot">© <span id="foot-year"></span> <span id="foot-name"></span> · Built with GitHub Pages</footer>
   </main>
 </div>
 
-<div class="lightbox" id="lightbox" hidden>
+<footer class="footer">
+  <div class="footer-in">
+    <div class="f-id">
+      <img id="f-photo" alt="" width="52" height="52">
+      <div><b id="f-name"></b><span id="f-role"></span></div>
+    </div>
+    <div class="f-links" id="f-links"></div>
+  </div>
+  <div class="f-bottom">
+    <span>© <span id="f-year"></span> <a id="f-name2" class="f-copy" target="_blank" rel="noopener"></a>. All rights reserved.</span>
+    <a href="#about" class="f-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
   <button class="iconbtn lb-close" id="lb-close" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
 </div>

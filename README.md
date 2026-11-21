@@ -39,6 +39,17 @@ Live address (after setup): **https://nayeem-econ.github.io**
 
 **ফিল্ডওয়ার্ক কার্ডের ছবি:** data.js-এর `fieldwork` অংশে `photos: ["assets/img/gallery/jamalpur-1.jpg"]` লিখলে কার্ডের উপরের নকশার জায়গায় ছবিটা বসবে।
 
+**নতুন সার্টিফিকেট:** সার্টিফিকেটের ছবি (JPG) `assets/img/certificates/` ফোল্ডারে আপলোড করুন। তারপর data.js-এর `training:` লিস্টের উপরে এভাবে লিখুন:
+`{ date: "Jan 2027", title: "Training-er nam", org: "Ayojok protishthan", type: "Training", text: "Ek line-er bornona.", cert: "assets/img/certificates/new-cert.jpg" },`
+`cert:` দিলে কার্ডে ছবি আর "View certificate" বাটন নিজে থেকেই আসবে।
+
+**Scopus / Web of Science লিংক:** data.js-এর `links:` অংশে `{ label: "Scopus", url: "" }`-এর `""`-এর ভেতরে লিংক পেস্ট করুন। লিংক দিলেই বাটন দেখা যাবে।
+
+**Under review পেপার:** data.js-এর `manuscripts: [` লাইনের নিচে লিখুন:
+`{ title: "Paper title", authors: "Pramanik, M. N. H., & Islam, A. H. M. S.", journal: "Journal name", status: "Under review", year: "2026" },`
+
+**রেফারেন্সের ছবি:** ছবি `assets/img/references/` ফোল্ডারে আপলোড করে `references:` অংশে সেই ব্যক্তির `photo: ""`-এর ভেতরে পথ লিখুন, যেমন `photo: "assets/img/references/saiful-islam.jpg"`।
+
 **Stats (৬, ৪, ২, ৩ সংখ্যাগুলো):** data.js-এর `stats:` অংশে সংখ্যা বদলে দিন।
 
 **CV PDF নতুন করতে:** data.js আপডেটের পর সাইটের `/cv.html` খুলে ব্রাউজারে Print → Save as PDF (A4) → ফাইলের নাম `Nayeem_Pramanik_CV.pdf` রেখে `assets/cv/`-এ আপলোড করে পুরনোটা বদলে দিন।

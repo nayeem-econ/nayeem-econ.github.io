@@ -56,8 +56,8 @@ p.plain{margin:0 0 5px}
     `<h2>Fieldwork</h2>` + rows(S.fieldwork, "title", "place", "", "details") +
     `<h2>Awards and scholarships</h2>` + rows(S.awards, "title", "org", "year") +
     `<h2>Methods and skills</h2>` + map(S.expertise, g => `<p class="plain"><b>${g.title}:</b> ${g.items.map(i => i.replace(/<[^>]+>/g, "")).join(" ")}</p>`) +
-    `<h2>Training and certificates</h2>` + rows(S.training, "title", "org", "year") +
-    `<h2>Leadership</h2>` + rows(S.leadership, "role", "org", "period") +
+    `<h2>Training and certificates</h2>` + rows(S.training, "title", "org", "date") +
+    `<h2>Leadership</h2>` + rows(S.leadership.flatMap(g => g.roles.map(r => ({role: r.role, org: g.org, period: r.period}))), "role", "org", "period") +
     `<h2>References</h2><p class="plain">Available on request.</p>`;
 }
 </script>
