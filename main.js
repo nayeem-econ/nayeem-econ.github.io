@@ -182,32 +182,20 @@
     const b = e.target.closest(".tab"); if (!b) return;
     [...$("gal-tabs").children].forEach(t => t.setAttribute("aria-selected", t === b));
     [...track.children].forEach(g => g.classList.toggle("hide", b.dataset.c !== "All photos" && g.dataset.c !== b.dataset.c));
-    track.classList.remove("anim"); track.style.transform = "";
+    track.scrollTo({ left: 0, behavior: "auto" });
   });
-  let busy = false;
-  const step = () => { const f = [...track.children].find(c => !c.classList.contains("hide")); return f ? f.getBoundingClientRect().width + 16 : 0; };
-  const visibleCount = () => [...track.children].filter(c => !c.classList.contains("hide")).length;
-  const next = () => {
-    if (busy || visibleCount() < 2) return;
-    busy = true;
-    if (reduce) { track.appendChild(track.firstElementChild); busy = false; return; }
-    track.classList.add("anim"); track.style.transform = `translateX(-${step()}px)`;
-    track.addEventListener("transitionend", () => {
-      track.classList.remove("anim"); track.appendChild(track.firstElementChild); track.style.transform = ""; busy = false;
-    }, { once: true });
-  };
-  const prev = () => {
-    if (busy || visibleCount() < 2) return;
-    track.insertBefore(track.lastElementChild, track.firstElementChild);
-    if (reduce) return;
-    busy = true;
-    track.style.transform = `translateX(-${step()}px)`;
-    void track.offsetWidth;
-    track.classList.add("anim"); track.style.transform = "";
-    track.addEventListener("transitionend", () => { track.classList.remove("anim"); busy = false; }, { once: true });
-  };
-  $("c-next").addEventListener("click", next);
-  $("c-prev").addEventListener("click", prev);
+  /* carousel: native smooth scrolling with snap, so clicks never get stuck */
+  const behave = reduce ? "auto" : "smooth";
+  const shown = () => [...track.children].filter(c => !c.classList.contains("hide"));
+  const stepW = () => { const v = shown(); return v.length ? v[0].getBoundingClientRect().width + 16 : 0; };
+  const atEnd = () => track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+  const atStart = () => track.scrollLeft <= 4;
+  let lastTouch = 0;
+  const next = () => { if (atEnd()) track.scrollTo({ left: 0, behavior: behave }); else track.scrollBy({ left: stepW(), behavior: behave }); };
+  const prev = () => { if (atStart()) track.scrollTo({ left: track.scrollWidth, behavior: behave }); else track.scrollBy({ left: -stepW(), behavior: behave }); };
+  $("c-next").addEventListener("click", () => { lastTouch = Date.now(); next(); });
+  $("c-prev").addEventListener("click", () => { lastTouch = Date.now(); prev(); });
+  ["pointerdown", "wheel", "touchstart"].forEach(ev => track.addEventListener(ev, () => { lastTouch = Date.now(); }, { passive: true }));
   let paused = false, inView = false;
   const car = $("carousel");
   car.addEventListener("mouseenter", () => paused = true);
@@ -216,8 +204,14 @@
   car.addEventListener("focusout", () => paused = false);
   const carObs = new IntersectionObserver(es => { inView = es[0].isIntersecting; }, { threshold: .3 });
   carObs.observe(car);
-  if (!reduce) setInterval(() => { if (!paused && inView && !document.hidden && $("lightbox").hidden) next(); }, 3500);
-  if (slides.length < 2) { $("c-prev").remove(); $("c-next").remove(); }
+  if (!reduce) setInterval(() => {
+    if (!paused && inView && !document.hidden && $("lightbox").hidden && Date.now() - lastTouch > 7000 && shown().length > 1) next();
+  }, 4000);
+  /* hide the arrows when every photo already fits on screen */
+  const arrows = () => { const fit = track.scrollWidth <= track.clientWidth + 4; $("c-prev").hidden = fit; $("c-next").hidden = fit; };
+  const arrowObs = new ResizeObserver(arrows); arrowObs.observe(track);
+  $("gal-tabs").addEventListener("click", () => requestAnimationFrame(arrows));
+  arrows();
 
   /* ---------- lightbox for certificates and gallery ---------- */
   const lb = $("lightbox");
