@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV — Md. Nayeem Hasan Pramanik</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+/* Printable CV built from data.js. Open in a browser and print to PDF (A4) to refresh the PDF. */
+@page{size:A4;margin:13mm 14mm}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:800px;padding:24px;color:#16201b;font:9.5pt/1.4 Inter,Arial,sans-serif}
+@media print{body{padding:0;max-width:none}}
+h1{font-family:"Source Serif 4",Georgia,serif;font-size:22pt;margin:0;color:#1d5a40}
+.sub{margin:3px 0 0;font-size:10.5pt}
+.contact{margin:6px 0 0;color:#56635c;font-size:9pt}
+.contact a{color:#1d5a40;text-decoration:none}
+h2{font-family:"Source Serif 4",Georgia,serif;font-size:12.5pt;color:#1d5a40;margin:12px 0 5px;padding-bottom:2px;border-bottom:1.2px solid #1d5a40;break-after:avoid}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 9.5em;gap:12px;margin:0 0 6px;break-inside:avoid}
+.row .w{color:#9a6c0e;font-weight:600;font-size:8.5pt;text-align:right}
+.row b{font-weight:600}
+.row .o{color:#56635c}
+.row .d{margin-top:1px}
+ol{margin:0;padding-left:18px}
+ol li{margin-bottom:6px;break-inside:avoid}
+.q{font-size:8pt;border:1px solid #1d5a40;color:#1d5a40;border-radius:8px;padding:0 5px;margin-left:4px;white-space:nowrap}
+p.plain{margin:0 0 5px}
+</style>
+</head>
+<body>
+<header>
+  <h1 id="n"></h1>
+  <p class="sub" id="t"></p>
+  <p class="contact" id="c"></p>
+</header>
+<div id="cv"></div>
+<script src="data.js"></script>
+<script>
+{
+  const S = window.SITE, P = S.profile, $ = id => document.getElementById(id);
+  const map = (a, f) => (a || []).map(f).join("");
+  const bold = a => a.replace("Pramanik, M. N. H.", "<b>Pramanik, M. N. H.</b>");
+  $("n").textContent = P.name;
+  $("t").textContent = P.title + " · " + P.affiliation;
+  const site = location.protocol.startsWith("http") ? location.origin + location.pathname.replace(/cv\.html$/, "") : "";
+  $("c").innerHTML = `${P.email} · ${P.location}` +
+    map(S.links.filter(l => /orcid|scholar/i.test(l.label)), l => ` · <a href="${l.url}">${l.label}</a>`) +
+    (site ? ` · <a href="${site}">${site.replace(/^https?:\/\//, "")}</a>` : "");
+  const rows = (a, t, o, w, d) => map(a, x => `<div class="row"><div><b>${x[t]}</b>${x[o] ? `<div class="o">${x[o]}</div>` : ""}${d && x[d] ? `<div class="d">${x[d]}</div>` : ""}</div><div class="w">${x[w] || ""}</div></div>`);
+  $("cv").innerHTML =
+    `<h2>Research interests</h2><p class="plain">${S.interests.join(" · ")}</p>` +
+    `<h2>Education</h2>` + rows(S.education.map(e => Object.assign({}, e, {details: [e.grade, e.details].filter(Boolean).join(". ")})), "degree", "institution", "period", "details") +
+    `<h2>Research experience</h2>` + rows(S.experience, "role", "org", "period", "details") +
+    `<h2>Publications</h2><ol>` + map(S.publications, p => `<li>${bold(p.authors)} (${p.year}). ${p.title}. <i>${p.journal}</i>${p.details ? ", " + p.details : ""}.${p.doi ? ` https://doi.org/${p.doi}` : ""}${p.badge ? `<span class="q">${p.badge}</span>` : ""}${/published/i.test(p.status) ? "" : ` <span class="q">${p.status}</span>`}</li>`) + `</ol>` +
+    `<h2>Conference presentations</h2>` + rows(S.conferences, "title", "event", "date") +
+    `<h2>Fieldwork</h2>` + rows(S.fieldwork, "title", "place", "", "details") +
+    `<h2>Awards and scholarships</h2>` + rows(S.awards, "title", "org", "year") +
+    `<h2>Methods and skills</h2>` + map(S.expertise, g => `<p class="plain"><b>${g.title}:</b> ${g.items.map(i => i.replace(/<[^>]+>/g, "")).join(" ")}</p>`) +
+    `<h2>Training and certificates</h2>` + rows(S.training, "title", "org", "year") +
+    `<h2>Leadership</h2>` + rows(S.leadership, "role", "org", "period") +
+    `<h2>References</h2><p class="plain">Available on request.</p>`;
+}
+</script>
+</body>
+</html>
