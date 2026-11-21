@@ -96,7 +96,7 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 #about h2{color:var(--green);font-size:clamp(25px,2.4vw,29px);margin-bottom:14px}
 .mini{font-family:Inter,sans-serif;font-size:15px;font-weight:600;margin:0 0 12px}
 .sep{margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
-.prose p{margin:0 0 12px;font-size:16px;color:var(--ink);max-width:90ch}
+.prose p{margin:0 0 12px;font-size:16px;color:var(--ink);max-width:90ch;text-align:justify;hyphens:auto}
 .chips{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .chips li{padding:5px 12px;border-radius:999px;background:var(--green-soft);font-size:13.5px}
 .seeall{display:block;margin:18px auto 0;min-height:40px;padding:0 22px;border-radius:999px;border:1px solid var(--rule);background:var(--card);color:var(--ink);font:600 14px Inter,sans-serif;cursor:pointer;box-shadow:var(--shadow)}
